@@ -1,0 +1,36 @@
+<a href="../index.html">Back</a></br>
+
+<h3>
+  List Structure - Immutable.JS
+</h3>
+
+<script src="../node_modules/immutable/dist/immutable.min.js"></script>
+<script>
+"use strict";
+console.clear();
+
+var qwerty = Immutable.List(['q','w','e','r','t','y']);
+document.write('qwerty list: '+qwerty+'</br>');
+
+document.write('Size: '+qwerty.size+'</br></br>');
+// 6
+document.write('Execute var qwertyu = qwerty.push(u); </br>');
+var qwertyu = qwerty.push( 'u' );
+// Object {size: 7, _origin: 0, _capacity: 7, _level: 5, _root: null…}
+document.write('qwerty list: '+qwerty+' </br>');
+document.write('qwertyu list: '+qwertyu+' </br></br>');
+
+document.write('Execute for qwertyu pop().pop() and create qwert variable</br>');
+var qwert = qwertyu.pop().pop();
+// Object {size: 5, _origin: 0, _capacity: 5, _level: 5, _root: null…}
+document.write('qwert list: '+qwert+' </br></br>');
+
+document.write('Execute for qwert shift() and tojson() and create wertArray variable</br>');
+var wertArray = qwert.shift().toJSON();
+// ["w", "e", "r", "t"]
+document.write('wertArray list: '+wertArray+' </br></br>');
+
+document.write('Execute for qwert concat(y,u,i) and toJS() and create qwertyuiArray variable</br>');
+var qwertyuiArray = qwert.concat( 'y', 'u', 'i' ).toJS();
+document.write('qwertyuiArray list: '+qwertyuiArray+' </br></br>');
+</script>
