@@ -54,6 +54,11 @@ Immutable improves upon this hack with a guarantee and an optimization:
 * Immutable's methods like .set() can be more efficient than cloning because they let the new object reference data in the old object: only the changed properties differ. This way you can save memory and performance versus constantly deep-cloning everything.
 * It's nearly impossible to accidentally mutate an Immutable object, and remarkably easy to accidentally forget to clone a normal object. Immutable objects give a strong guarantee that nowhere does anyone mutate data in-place.
 
+
+For see the difference between them, please take a look to the example:
+
+> Party - Example
+
 ## Immutable.js data structures
 
 Immutable.js has the following data structures:
