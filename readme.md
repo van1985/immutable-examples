@@ -1,7 +1,7 @@
 # Immutable
-> This project is an application skeleton for a React with Redux app.
+>  Understanding how Immutable vector library works!!
 
-`React` is a UI library developed at Facebook to facilitate the creation of interactive, stateful & reusable UI components. It is used at Facebook in production, and Instagram.com is written entirely in React.
+`Immutable.js` provides us the data structures and utilities that we need to start introducing this powerful concept of immutability into our applications.
 
 ## Why do we need immutable?
 
