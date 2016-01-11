@@ -1,0 +1,78 @@
+<script src="../node_modules/immutable/dist/immutable.min.js"></script>
+<script>
+"use strict";
+console.clear();
+
+document.write('<h3> Array Party - without Immutable library </h3> </br>');
+let ArrayParty = (function(){
+    console.log("-- ArrayParty");
+
+    let defaultMenu=['hamburger','french fries','soda'];
+    let guestNames=['John','Jane','Bill'];
+
+    let guest = name =>({
+      name,
+      foods: defaultMenu,
+      eat(food){
+        this.foods.push(food);
+        return this;
+      }
+    });
+    let guests = guestNames.map(guest);
+    //-------//
+
+    //TODO: This should work with the following declaration let[john,jane,bill]=guests;
+    let john= guests[0];
+    let jane=guests[1];
+    let bill=guests[2];
+    john.eat('salad');
+    jane.eat('ribs');
+    bill.eat('twinkies').eat('ribs').eat('hot dog');
+
+    guests.forEach(guest=> console.log(
+        `${guest.name} ate: ` + guest.foods.join(',')));
+
+    guests.forEach(guest=> document.write(`<b>${guest.name} ate: </b>` + guest.foods.join(',')+` <br />`));
+
+});
+
+ArrayParty();
+
+document.write('<h3> List Party - with Immutable library </h3> </br>');
+/**
+* The Immutable.List Party
+*/
+let listParty = (function(){
+    console.log("-- ListParty");
+
+    let defaultMenu= Immutable.List(['hamburger','french fries','soda']);
+    let guestNames=['John','Jane','Bill'];
+
+    let guest = name =>({
+      name,
+      foods: defaultMenu,
+      eat(food){
+        this.foods=this.foods.push(food);
+        return this;
+      }
+    });
+    let guests = guestNames.map(guest);
+    //-------//
+
+    //TODO: This should work with the following declaration let[john,jane,bill]=guests;
+    let john= guests[0];
+    let jane=guests[1];
+    let bill=guests[2];
+    john.eat('salad');
+    jane.eat('ribs');
+    bill.eat('twinkies').eat('ribs').eat('hot dog');
+
+    guests.forEach(guest=> console.log(
+        `${guest.name} ate: ` + guest.foods.join(',')));
+
+    guests.forEach(guest=> document.write(`<b>${guest.name} ate: </b>` + guest.foods.join(',')+` <br />`));
+
+});
+listParty();
+
+</script>

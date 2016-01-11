@@ -1,0 +1,11 @@
+{
+  "name": "immutable-example",
+  "version": "0.0.1",
+  "scripts": {
+  },
+  "dependencies": {
+    "immutable": "^3.7.6"
+  },
+  "devDependencies": {
+  }
+}
