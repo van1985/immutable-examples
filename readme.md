@@ -5,7 +5,7 @@
 
 ## Why do we need immutable?
 
-#Objects & Arrays are mutable
+###Objects & Arrays are mutable
 
 JavaScript arrays & objects are mutable data. If you create an object, reference it as a different variable, and modify it, both references point to a changed value.
 
@@ -25,7 +25,7 @@ var sorted = numbers.sort();
 // because calling .sort() sorts the array in-place
 ```
 
-#Immutable.js
+###Immutable.js
 
 Luckily, the Immutable.js makes immutable data simple, by providing custom and efficient datastructures for unchanging data.
 
